@@ -1,22 +1,29 @@
 .container {
   display: grid;
   justify-items: center;
-  column-gap: 5px;
   row-gap: 2px;
   grid-template-areas:
     "header"
     "main"
+    "specials"
     "footer";
 }
 
 .header {
   grid-area: header;
+  width: 100%;
 }
 
 .main {
   grid-area: main;
+  width: 100%;
+}
+
+.specials {
+  grid-area: specials;
 }
 
 .footer {
   grid-area: footer;
+  width: 100%;
 }
