@@ -1,10 +1,21 @@
 import Logo from "../assets/Logo.svg";
 import Nav from "./Nav";
-import "./Header.css";
+const styles = {
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '0.5rem',
+  },
+  logo: {
+    marginRight: '5rem'
+  }
+
+}
 const Header = () => {
   return (
-    <header class="container">
-      <img class="logo" src={Logo} alt="Logo" />
+    <header style = {styles.container}>
+      <img style={styles.logo} src={Logo} alt="Logo" />
       <Nav class="nav" />
     </header>
   );
