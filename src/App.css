@@ -4,26 +4,45 @@
   row-gap: 2px;
   grid-template-areas:
     "header"
-    "main"
+    "hero"
     "specials"
+    "testimonials"
+    "about"
     "footer";
 }
 
 .header {
   grid-area: header;
   width: 100%;
+  height: 4fr;
 }
 
-.main {
-  grid-area: main;
+.hero {
+  grid-area: hero;
   width: 100%;
+  height: 4fr;
 }
 
 .specials {
   grid-area: specials;
+  width: 100%;
+  height: 4fr;
+}
+
+.testimonials {
+  grid-area: testimonials;
+  width: 100%;
+  height: 4fr;
+}
+
+.about{
+  grid-area: about;
+  width: 100%;
+  height: 4fr;
 }
 
 .footer {
   grid-area: footer;
   width: 100%;
+  height: 4fr;
 }
