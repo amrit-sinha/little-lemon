@@ -1,16 +1,33 @@
 import "./App.css";
 import Header from "./components/Header";
-import Main from "./components/Main";
+import Hero from "./components/Hero";
 import Specials from "./components/Specials";
+import Testimonials from "./components/Testimonials";
+import About from "./components/About";
 import Footer from "./components/Footer";
 function App() {
   return (
-    <main class="container">
-      <Header class="header" />
-      <Main class="main" />
-      <Specials class="specials" />
-      <Footer class="footer" />
-    </main>
+
+    <div className="container">
+      <div className="header">
+        <Header/>
+      </div>
+      <div className="hero">
+        <Hero/>
+      </div>
+      <div className="specials">
+        <Specials/>
+      </div>
+      <div className="testimonials">
+        <Testimonials/>
+      </div>
+      <div className="about">
+        <About/>
+      </div>
+      <div className="footer">
+        <Footer/>
+      </div>
+    </div>
   );
 }
 

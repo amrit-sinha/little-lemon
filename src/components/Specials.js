@@ -11,6 +11,8 @@ const styles = {
     alignItems: "center",
     width: "100%",
     marginBottom: "20px",
+    fontFamily: "Markazi Text, serif",
+    fontWeight: "bold",
     font: "40px",
   },
   cards: {
