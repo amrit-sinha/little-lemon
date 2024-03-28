@@ -1,5 +1,5 @@
 import Logo from "../assets/Logo.svg";
-import Nav from "./Nav";
+// import Nav from "./Nav";
 const styles = {
   container: {
     display: 'flex',
@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <header style = {styles.container}>
       <img style={styles.logo} src={Logo} alt="Logo" />
-      <Nav class="nav" />
+      {/* <Nav class="nav" /> */}
     </header>
   );
 };

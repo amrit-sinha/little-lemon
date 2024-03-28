@@ -20,9 +20,9 @@ const Footer = () => {
           style={styles.image}
         />
       </div>
-      <div>
+      {/* <div>
         <Nav />
-      </div>
+      </div> */}
     </div>
   );
 };

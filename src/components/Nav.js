@@ -31,7 +31,7 @@ const Nav = () => {
         <a href="/menu" style={styles.a}>Menu</a>
       </li>
       <li style={styles.li}>
-        <a href="/reservations" style={styles.a}>Reservations</a>
+        <a href="/booking" style={styles.a}>Reservations</a>
       </li>
       <li style={styles.li}>
         <a href="/order" style={styles.a}>Order Online</a>
