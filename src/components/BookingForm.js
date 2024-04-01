@@ -21,6 +21,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
     bookings.push(newBooking);
     localStorage.setItem('bookings', JSON.stringify(bookings));
     console.log('Form submitted:', newBooking);
+    alert("Your reservation has been made!");
     dispatch({ type: "UPDATE_TIMES", payload: date });
     setTime(availableTimes[0]);
   };
