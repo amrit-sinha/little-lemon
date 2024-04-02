@@ -14,24 +14,31 @@ const BookingForm = ({ availableTimes, dispatch }) => {
     setTime(availableTimes[0]);
   };
 
+  const styles = {
+    display: "grid",
+    maxWidth: "200px",
+    gap: "20px",
+    margin: "5em auto",
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const newBooking = { name, date, time, guests, occasion };
-    const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+    const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
     bookings.push(newBooking);
-    localStorage.setItem('bookings', JSON.stringify(bookings));
-    console.log('Form submitted:', newBooking);
+    localStorage.setItem("bookings", JSON.stringify(bookings));
+    console.log("Form submitted:", newBooking);
     alert("Your reservation has been made!");
     dispatch({ type: "UPDATE_TIMES", payload: date });
     setTime(availableTimes[0]);
   };
 
+  const today = new Date().toISOString().split("T")[0];
+
+  const isFormValid = name.trim() !== "" && date !== "";
 
   return (
-    <form
-      style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
-      onSubmit={handleSubmit}
-    >
+    <form style={styles} onSubmit={handleSubmit}>
       <label htmlFor="name">Enter your name</label>
       <input
         type="text"
@@ -39,26 +46,24 @@ const BookingForm = ({ availableTimes, dispatch }) => {
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-
       <label htmlFor="res-date">Choose date</label>
       <input
         type="date"
         id="res-date"
         value={date}
         onChange={handleDateChange}
+        min={today}
       />
-
       <label htmlFor="res-time">Choose time</label>
       <select
-      id="res-time"
-      value={time}
-      onChange={(e) => setTime(e.target.value)}
-    >
-      {availableTimes.map((time) => (
-        <option key={time}>{time}</option>
-      ))}
-    </select>
-
+        id="res-time"
+        value={time}
+        onChange={(e) => setTime(e.target.value)}
+      >
+        {availableTimes.map((time) => (
+          <option key={time}>{time}</option>
+        ))}
+      </select>
       <label htmlFor="guests">Number of guests</label>
       <input
         type="number"
@@ -69,7 +74,6 @@ const BookingForm = ({ availableTimes, dispatch }) => {
         value={guests}
         onChange={(e) => setGuests(parseInt(e.target.value))}
       />
-
       <label htmlFor="occasion">Occasion</label>
       <select
         id="occasion"
@@ -79,8 +83,11 @@ const BookingForm = ({ availableTimes, dispatch }) => {
         <option>Birthday</option>
         <option>Anniversary</option>
       </select>
-
-      <input type="submit" value="Make Your reservation" />
+      <input
+        type="submit"
+        value="Make Your reservation"
+        disabled={!isFormValid}
+      />
     </form>
   );
 };
