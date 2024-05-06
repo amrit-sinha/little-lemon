@@ -43,93 +43,43 @@ const Header = () => {
     { text: "Log In", link: "/login" },
   ];
 
-  const styles = {
-    header: {
-      position: "fixed",
-      top: 0,
-      left: 0,
-      width: "100%",
-      backgroundColor: "white",
-      transition: "transform 0.3s ease-in-out",
-      zIndex: 100,
-      transform: isVisible ? "translateY(0)" : "translateY(-100%)",
-      padding: "10px 0",
-    },
-    container: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      width: "80%",
-      maxWidth: "1200px",
-      margin: "0 auto",
-    },
-    logo: {
-      height: "40px",
-    },
-    nav: {
-      display: isMobile ? "none" : "flex",
-    },
-    menu: {
-      listStyle: "none",
-      margin: 0,
-      padding: 0,
-      display: "flex",
-    },
-    menuItem: {
-      marginLeft: "20px",
-    },
-    menuLink: {
-      textDecoration: "none",
-      color: "black",
-      fontSize: "16px",
-      fontWeight: "bold",
-      textTransform: "uppercase",
-    },
-    menuIcon: {
-      display: isMobile ? "block" : "none",
-      cursor: "pointer",
-    },
-    mobileMenu: {
-      display: isMenuOpen ? "block" : "none",
-      position: "absolute",
-      top: "100%",
-      left: 0,
-      width: "100%",
-      backgroundColor: "white",
-      padding: "10px",
-      boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
-    },
-    mobileMenuItem: {
-      marginBottom: "10px",
-    },
-  };
-
   return (
-    <header style={styles.header}>
-      <div style={styles.container}>
-        <img src={Logo} alt="Little Lemon Logo" style={styles.logo} />
-        <nav style={styles.nav}>
-          <ul style={styles.menu}>
+    <header
+      style={{ transform: isVisible ? "translateY(0)" : "translateY(-100%)" }}
+    >
+      <div className="header-desktop-container">
+        <img src={Logo} alt="Little Lemon Logo" />
+        <nav
+          className="header-nav"
+          style={{ display: isMobile ? "none" : "flex" }}
+        >
+          <ul className="header-menu">
             {menuItems.map((item, index) => (
-              <li key={index} style={styles.menuItem}>
-                <a href={item.link} style={styles.menuLink}>
+              <li key={index} className="header-menu-item">
+                <a href={item.link} className="header-menu-link">
                   {item.text}
                 </a>
               </li>
             ))}
           </ul>
         </nav>
-        <div style={styles.menuIcon} onClick={toggleMenu}>
+        <div
+          className={
+            isMobile ? "header-menu-icon-block" : "header-menu-icon-none"
+          }
+          onClick={toggleMenu}
+        >
           &#9776;
         </div>
       </div>
       {isMobile && (
-        <div style={styles.mobileMenu}>
+        <div
+          className="header-mobile-menu"
+          style={{ display: isMenuOpen ? "block" : "none" }}
+        >
           {menuItems.map((item, index) => (
-            <div key={index} style={styles.mobileMenuItem}>
-              <a href={item.link} style={styles.menuLink}>
-                {item.text}
-              </a>
+            <div key={index} className="header-mobile-menu-item">
+              <a href={item.link}>{item.text}</a>
             </div>
           ))}
         </div>
