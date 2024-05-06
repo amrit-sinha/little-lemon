@@ -6,26 +6,14 @@ import About from "./About";
 import Footer from "./Footer";
 const Homepage = () => {
   return (
-    <div className="container">
-      <div className="header">
-        <Header />
-      </div>
-      <div className="hero">
-        <Hero />
-      </div>
-      <div className="specials">
-        <Specials />
-      </div>
-      <div className="testimonials">
-        <Testimonials />
-      </div>
-      <div className="about">
-        <About />
-      </div>
-      <div className="footer">
-        <Footer />
-      </div>
-    </div>
+    <>
+      <Header />
+      <Hero />
+      <Specials />
+      <Testimonials />
+      <About />
+      <Footer />
+    </>
   );
 };
 export default Homepage;

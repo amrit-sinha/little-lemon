@@ -30,32 +30,11 @@ const Testimonials = () => {
       img: Person4Img,
     },
   ];
-  const styles = {
-    container: {
-      backgroundColor: "#EE9972",
-      width: "100%",
-      textAlign: "center",
-    },
-    heading: {
-      fontFamily: "Markazi Text, serif",
-      fontWeight: "bold",
-      justifyContent: "center",
-    },
-    card: {
-      display: "flex",
-      justifyItems: "center",
-      gap: "1rem",
-      height: "auto",
-      width: "auto"
-    },
-  };
 
   return (
-    <div className="testimonials" style={styles.container}>
-      <div className="testimonials-header" style={styles.heading}>
-        <h2> Testimonials </h2>
-      </div>
-      <div className="testimonials-card" style={styles.card}>
+    <div className="testimonials-container">
+      <h2> Testimonials </h2>
+      <div className="testimonials-container-cards">
         {cardData.map((data) => {
           return (
             <TestimonialCard

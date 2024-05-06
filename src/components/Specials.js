@@ -4,31 +4,14 @@ import Bruchetta from "../assets/bruchetta.svg";
 import LemonDessert from "../assets/lemon dessert.jpg";
 import Description from "./Description.json";
 import Button from "./Button";
-const styles = {
-  header: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    width: "100%",
-    marginBottom: "20px",
-    fontFamily: "Markazi Text, serif",
-    fontWeight: "bold",
-    font: "40px",
-  },
-  cards: {
-    display: "flex",
-    justifyItems: "center",
-    gap: "1rem",
-  },
-};
 const Specials = () => {
   return (
-    <div className="specials">
-      <div className="specials-header" style={styles.header}>
+    <div className="specials-container">
+      <div className="specials-header">
         <h2>This weeks specials!</h2>
         <Button text="Online Menu" />
       </div>
-      <div className="specials-cards" style={styles.cards}>
+      <div className="specials-cards">
         <Card
           title={"Greek Salad"}
           description={Description.GreekSalad}
