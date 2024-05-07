@@ -1,7 +1,7 @@
 const TestimonialCard = ({ name, review, rating, imageSrc }) => {
   return (
     <div className="testimonials-individual-card-container">
-      <div>
+      <div className="testimonials-individual-card-rating">
         <h3> Rating </h3>
         <p>{rating}</p>
       </div>
