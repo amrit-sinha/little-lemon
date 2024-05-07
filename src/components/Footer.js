@@ -35,7 +35,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer-container">
-        <img src={RestaurantImage} alt="Restaurant" style={{ width: "45%" }} />
+        <img src={RestaurantImage} alt="Restaurant" />
         <div className="footer-links-container">
           {footerLinks.map((column, index) => (
             <div key={index} className="footer-column">

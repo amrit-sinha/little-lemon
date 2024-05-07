@@ -15,7 +15,7 @@ const Header = () => {
     };
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 968);
     };
 
     window.addEventListener("scroll", handleScroll);
