@@ -26,7 +26,7 @@ const Testimonials = () => {
     {
       Name: "Sara",
       Rating: "⭐⭐⭐⭐⭐",
-      Review: "hello",
+      Review: "Delicious food",
       img: Person4Img,
     },
   ];
