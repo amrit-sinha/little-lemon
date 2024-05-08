@@ -8,7 +8,7 @@ const Footer = () => {
       links: [
         { text: "Home", url: "/" },
         { text: "About", url: "/" },
-        { text: "Menu", url: "/" },
+        { text: "Menu", url: "/menu" },
         { text: "Reservations", url: "/booking" },
         { text: "Order Online", url: "/" },
         { text: "Log in", url: "/" },
