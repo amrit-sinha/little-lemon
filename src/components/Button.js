@@ -1,4 +1,7 @@
 const Button = (props) => {
-  return <button onClick={null}>{props.text}</button>;
+  const handleClick = () => {
+    if (props.redirect) window.location.href = `${props.redirect}`;
+  };
+  return <button onClick={handleClick}>{props.text}</button>;
 };
 export default Button;

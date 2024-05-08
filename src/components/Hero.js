@@ -8,7 +8,7 @@ const Hero = () => {
         <h2>Little Lemon</h2>
         <p>Chicago</p>
         <p>{Description.TitleDescription}</p>
-        <Button text="Reserve a Table" />
+        <Button text="Reserve a Table" redirect="/booking" />
       </div>
       <img src={RestaurantFood} alt="Restaurant food" />
     </div>
