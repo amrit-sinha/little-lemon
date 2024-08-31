@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import restaurant from "../assets/restaurant.jpg";
 
 const BookingForm = ({ availableTimes, dispatch }) => {
   const [name, setName] = useState("");
@@ -12,13 +13,6 @@ const BookingForm = ({ availableTimes, dispatch }) => {
     setDate(selectedDate);
     dispatch({ type: "UPDATE_TIMES", payload: selectedDate });
     setTime(availableTimes[0]);
-  };
-
-  const styles = {
-    display: "grid",
-    maxWidth: "200px",
-    gap: "20px",
-    margin: "5em auto",
   };
 
   const handleSubmit = (e) => {
@@ -38,57 +32,91 @@ const BookingForm = ({ availableTimes, dispatch }) => {
   const isFormValid = name.trim() !== "" && date !== "";
 
   return (
-    <form style={styles} onSubmit={handleSubmit}>
-      <label htmlFor="name">Enter your name</label>
-      <input
-        type="text"
-        id="name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+    <div className="booking-page-container">
+      <img
+        className="booking-page-bg"
+        src={restaurant}
+        alt="restaurant background"
       />
-      <label htmlFor="res-date">Choose date</label>
-      <input
-        type="date"
-        id="res-date"
-        value={date}
-        onChange={handleDateChange}
-        min={today}
-      />
-      <label htmlFor="res-time">Choose time</label>
-      <select
-        id="res-time"
-        value={time}
-        onChange={(e) => setTime(e.target.value)}
-      >
-        {availableTimes.map((time) => (
-          <option key={time}>{time}</option>
-        ))}
-      </select>
-      <label htmlFor="guests">Number of guests</label>
-      <input
-        type="number"
-        placeholder="1"
-        min="1"
-        max="10"
-        id="guests"
-        value={guests}
-        onChange={(e) => setGuests(parseInt(e.target.value))}
-      />
-      <label htmlFor="occasion">Occasion</label>
-      <select
-        id="occasion"
-        value={occasion}
-        onChange={(e) => setOccasion(e.target.value)}
-      >
-        <option>Birthday</option>
-        <option>Anniversary</option>
-      </select>
-      <input
-        type="submit"
-        value="Make Your reservation"
-        disabled={!isFormValid}
-      />
-    </form>
+      <div className="booking-page">
+        <h1>Book Table</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="form-element">
+            <label htmlFor="name" className="name-label">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              placeholder="John Doe"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div className="form-element">
+            <label htmlFor="res-date" className="res-date-label">
+              Date
+            </label>
+            <input
+              type="date"
+              id="res-date"
+              value={date}
+              onChange={handleDateChange}
+              min={today}
+            />
+          </div>
+          <div className="form-element">
+            <label htmlFor="res-time" className="res-time-label">
+              Time
+            </label>
+            <select
+              id="res-time"
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
+            >
+              {availableTimes.map((time) => (
+                <option key={time}>{time}</option>
+              ))}
+            </select>
+          </div>
+          <div className="form-element">
+            <label htmlFor="guests" className="guests-label">
+              Guests
+            </label>
+            <input
+              type="number"
+              placeholder="1"
+              min="1"
+              max="10"
+              id="guests"
+              value={guests}
+              onChange={(e) => setGuests(parseInt(e.target.value))}
+            />
+          </div>
+          <div className="form-element">
+            <label htmlFor="occasion" className="occasion-label">
+              Occasion
+            </label>
+            <select
+              id="occasion"
+              value={occasion}
+              onChange={(e) => setOccasion(e.target.value)}
+            >
+              <option>Birthday</option>
+              <option>Anniversary</option>
+            </select>
+          </div>
+
+          <input
+            type="submit"
+            value="Reserve"
+            className="submit-button"
+            disabled={!isFormValid}
+            style={isFormValid ? { cursor: "pointer" } : {}}
+          />
+        </form>
+      </div>
+    </div>
   );
 };
 
