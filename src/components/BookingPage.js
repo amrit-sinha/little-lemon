@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import Header from "./Header";
 import BookingForm from "./BookingForm";
 
 const BookingPage = () => {
@@ -21,7 +22,12 @@ const BookingPage = () => {
     initializeTimes
   );
 
-  return <BookingForm availableTimes={availableTimes} dispatch={dispatch} />;
+  return (
+    <>
+      <Header />
+      <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
+    </>
+  );
 };
 
 export default BookingPage;
